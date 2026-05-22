@@ -5,5 +5,8 @@
   "private": true,
   "scripts": {
     "test:report": "node netlify/functions/build-audit-report.js"
+  },
+  "dependencies": {
+    "pdfkit": "^0.15.0"
   }
 }
