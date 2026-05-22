@@ -1,0 +1,27 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Netlify
+.netlify/
+
+# Environment / secrets — never commit these
+.env
+.env.*
+!.env.example
+
+# Generated PDFs from local testing
+test_audit_report.pdf
+preview-*.png
+*.pdf
+!**/Vola_Brochure.pdf
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp

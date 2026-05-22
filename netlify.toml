@@ -1,0 +1,22 @@
+# =============================================================================
+# VOLA Audit — Netlify build configuration
+# =============================================================================
+
+[build]
+  publish   = "public"
+  functions = "netlify/functions"
+
+[functions]
+  # Bundler for Node.js functions. esbuild is fast and well-supported.
+  node_bundler = "esbuild"
+
+# -----------------------------------------------------------------------------
+# Security headers (applied to all pages)
+# -----------------------------------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options        = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy        = "strict-origin-when-cross-origin"
+    Permissions-Policy     = "geolocation=(), microphone=(), camera=()"

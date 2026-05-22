@@ -1,0 +1,9 @@
+{
+  "name": "vola-audit",
+  "version": "1.0.0",
+  "description": "VOLA Benefits Carolinas Small Business Healthcare Audit landing page + function",
+  "private": true,
+  "scripts": {
+    "test:report": "node netlify/functions/build-audit-report.js"
+  }
+}
