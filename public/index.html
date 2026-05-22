@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Carolinas Small Business Healthcare Audit — VOLA Benefits</title>
+<meta name="description" content="A 2-minute audit showing what your current benefits gap is actually costing your business. Your numbers. No sales pitch." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #0E2A3F;
+    --navy-deep: #081827;
+    --navy-soft: #16364E;
+    --teal: #2DD4BF;
+    --teal-dim: #14B8A6;
+    --teal-glow: rgba(45, 212, 191, 0.15);
+    --white: #FFFFFF;
+    --gray-100: #F5F7FA;
+    --gray-300: #B8C5D1;
+    --gray-400: #94A3B8;
+    --gray-500: #64748B;
+    --accent: #F5C453;
+    --shadow-card: 0 20px 60px -20px rgba(0,0,0,0.4);
+    --shadow-input: inset 0 1px 2px rgba(0,0,0,0.1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Manrope', system-ui, -apple-system, sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .display{
+    font-family: 'Fraunces', Georgia, serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "opsz" 96, "SOFT" 0;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+
+  /* ----------- HEADER ----------- */
+  header{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(8, 24, 39, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(45, 212, 191, 0.1);
+  }
+  .nav{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .brand{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity .2s;
+  }
+  a.brand:hover{ opacity: 0.85; }
+  a.brand:hover .brand-tag{ color: var(--white); }
+  .brand-mark{
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.18em;
+    color: var(--white);
+  }
+  .brand-mark .tm{
+    font-size: 0.55em;
+    vertical-align: super;
+    letter-spacing: 0;
+    margin-left: 2px;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    opacity: 0.85;
+  }
+  .brand-tag{
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 600;
+    padding-left: 12px;
+    border-left: 1px solid rgba(45,212,191,0.3);
+    display: none;
+  }
+  @media(min-width:640px){.brand-tag{display:block;}}
+  .nav-phone{
+    font-size: 0.875rem;
+    color: var(--gray-300);
+    font-weight: 500;
+  }
+  .nav-phone strong{color:var(--white);}
+
+  /* ----------- HERO ----------- */
+  .hero{
+    position: relative;
+    padding: 80px 24px 100px;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 20%, rgba(45, 212, 191, 0.12), transparent 50%),
+      radial-gradient(ellipse 70% 50% at 90% 80%, rgba(45, 212, 191, 0.06), transparent 50%),
+      linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+  }
+  .hero::before{
+    content:'';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(45, 212, 191, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(45, 212, 191, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 80%);
+    pointer-events: none;
+  }
+  .hero-inner{
+    position: relative;
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .eyebrow{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 600;
+    padding: 8px 18px;
+    border: 1px solid rgba(45, 212, 191, 0.3);
+    border-radius: 999px;
+    background: rgba(45, 212, 191, 0.05);
+    margin-bottom: 28px;
+  }
+  .eyebrow .dot{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--teal);
+    box-shadow: 0 0 12px var(--teal);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%, 100%{opacity:1;}
+    50%{opacity:0.4;}
+  }
+  h1.hero-title{
+    font-size: clamp(2.4rem, 6.5vw, 4.6rem);
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+  h1.hero-title em{
+    font-style: italic;
+    color: var(--teal);
+    font-weight: 500;
+  }
+  .hero-sub{
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--gray-300);
+    max-width: 620px;
+    margin: 0 auto 40px;
+    font-weight: 400;
+  }
+  .cta-primary{
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--teal);
+    color: var(--navy);
+    padding: 18px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all .25s ease;
+    box-shadow: 0 8px 24px -4px rgba(45,212,191,0.4);
+    font-family: inherit;
+  }
+  .cta-primary:hover{
+    background: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px -4px rgba(45,212,191,0.5);
+  }
+  .cta-primary .arrow{
+    transition: transform .25s ease;
+  }
+  .cta-primary:hover .arrow{transform: translateX(4px);}
+
+  .hero-meta{
+    margin-top: 36px;
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: var(--gray-400);
+  }
+  .hero-meta div{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero-meta .check{
+    color: var(--teal);
+    font-weight: 700;
+  }
+
+  /* ----------- AUDIT SECTION ----------- */
+  .audit-section{
+    padding: 80px 24px 100px;
+    background: linear-gradient(180deg, var(--navy-deep) 0%, var(--navy) 100%);
+  }
+  .container{
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .section-label{
+    text-align:center;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .section-title{
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+  .section-desc{
+    text-align: center;
+    color: var(--gray-300);
+    margin-bottom: 56px;
+    max-width: 560px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .audit-card{
+    background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 100%);
+    border: 1px solid rgba(45, 212, 191, 0.18);
+    border-radius: 16px;
+    padding: 40px 28px;
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+  }
+  @media(min-width:640px){.audit-card{padding:48px 44px;}}
+  .audit-card::before{
+    content:'';
+    position:absolute;
+    inset: 0 0 auto 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, var(--teal) 50%, transparent 100%);
+    opacity: 0.6;
+  }
+
+  .progress{
+    display: flex;
+    gap: 6px;
+    margin-bottom: 32px;
+  }
+  .progress div{
+    height: 4px;
+    flex: 1;
+    background: rgba(255,255,255,0.08);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+  }
+  .progress div.active::after{
+    content:'';
+    position: absolute;
+    inset: 0;
+    background: var(--teal);
+    border-radius: 2px;
+    animation: fill .4s ease forwards;
+  }
+  @keyframes fill{
+    from{transform: translateX(-100%);}
+    to{transform: translateX(0);}
+  }
+  .step-counter{
+    font-size: 0.75rem;
+    color: var(--teal);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .question{
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+  .question-helper{
+    color: var(--gray-400);
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+  }
+
+  .step{display:none; animation: stepIn .4s ease;}
+  .step.active{display:block;}
+  @keyframes stepIn{
+    from{opacity:0; transform: translateY(8px);}
+    to{opacity:1; transform: translateY(0);}
+  }
+
+  /* OPTION GRID (industry, current setup) */
+  .options{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  @media(min-width:520px){.options{grid-template-columns: 1fr 1fr;}}
+  .option{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 18px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .2s ease;
+    font-weight: 500;
+    color: var(--gray-300);
+    text-align: left;
+  }
+  .option:hover{
+    border-color: rgba(45,212,191,0.4);
+    background: rgba(45,212,191,0.05);
+    color: var(--white);
+  }
+  .option.selected{
+    border-color: var(--teal);
+    background: var(--teal-glow);
+    color: var(--white);
+  }
+  .option .ico{
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: rgba(45,212,191,0.15);
+    display: grid;
+    place-items: center;
+    color: var(--teal);
+    font-weight: 700;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+  }
+  .option.selected .ico{background: var(--teal); color: var(--navy);}
+
+  /* SLIDER */
+  .slider-wrap{
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 28px 24px;
+  }
+  .slider-value{
+    text-align: center;
+    font-family: 'Fraunces', serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--teal);
+    margin-bottom: 6px;
+    line-height: 1;
+  }
+  .slider-value-label{
+    text-align:center;
+    color: var(--gray-400);
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+    letter-spacing: 0.05em;
+  }
+  input[type="range"]{
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+    cursor: pointer;
+  }
+  input[type="range"]::-webkit-slider-runnable-track{
+    height: 6px;
+    background: linear-gradient(90deg, var(--teal) 0%, var(--teal) var(--p, 0%), rgba(255,255,255,0.1) var(--p, 0%));
+    border-radius: 3px;
+  }
+  input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 4px solid var(--teal);
+    margin-top: -10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    cursor: pointer;
+  }
+  input[type="range"]::-moz-range-track{
+    height: 6px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 3px;
+  }
+  input[type="range"]::-moz-range-progress{
+    height: 6px;
+    background: var(--teal);
+    border-radius: 3px;
+  }
+  input[type="range"]::-moz-range-thumb{
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 4px solid var(--teal);
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  .slider-bounds{
+    display:flex;
+    justify-content: space-between;
+    color: var(--gray-500);
+    font-size: 0.75rem;
+    margin-top: 12px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  /* NAV BUTTONS */
+  .step-nav{
+    margin-top: 32px;
+    display:flex;
+    gap: 12px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .btn-back{
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--gray-300);
+    padding: 14px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s;
+    font-family: inherit;
+    font-size: 0.95rem;
+  }
+  .btn-back:hover{border-color: var(--gray-400); color: var(--white);}
+  .btn-back:disabled{opacity: 0.3; cursor: not-allowed;}
+  .btn-next{
+    background: var(--teal);
+    color: var(--navy);
+    border: none;
+    padding: 14px 30px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .2s;
+    font-family: inherit;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .btn-next:hover{background: var(--white); transform: translateY(-1px);}
+  .btn-next:disabled{opacity: 0.4; cursor: not-allowed; transform: none;}
+
+  /* ----------- RESULTS ----------- */
+  .results{
+    display: none;
+    animation: stepIn .5s ease;
+  }
+  .results.active{display:block;}
+  .results-header{text-align:center; margin-bottom: 8px;}
+  .results-label{
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .results-headline{
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.3rem, 3vw, 1.7rem);
+    color: var(--white);
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+  .big-number{
+    text-align: center;
+    margin: 20px 0 12px;
+  }
+  .big-number .dollar{
+    font-family: 'Fraunces', serif;
+    font-size: clamp(3.5rem, 12vw, 6.5rem);
+    font-weight: 700;
+    color: var(--teal);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    display: inline-block;
+    text-shadow: 0 0 80px rgba(45,212,191,0.3);
+  }
+  .big-number-caption{
+    text-align: center;
+    color: var(--gray-300);
+    font-size: 0.95rem;
+    margin-bottom: 40px;
+    letter-spacing: 0.02em;
+  }
+
+  .breakdown{
+    background: rgba(0,0,0,0.2);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 32px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .breakdown-title{
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .breakdown-row{
+    display:flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    align-items: baseline;
+  }
+  .breakdown-row:last-child{border-bottom:none;}
+  .breakdown-row .label{color: var(--gray-300); font-size: 0.95rem;}
+  .breakdown-row .value{
+    color: var(--white);
+    font-weight: 600;
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+  }
+  .breakdown-row.total{
+    border-top: 1px solid rgba(45,212,191,0.3);
+    margin-top: 8px;
+    padding-top: 16px;
+  }
+  .breakdown-row.total .label{color: var(--white); font-weight: 600;}
+  .breakdown-row.total .value{color: var(--teal); font-size: 1.4rem;}
+
+  .comparison{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+  @media(min-width:600px){.comparison{grid-template-columns:1fr 1fr;}}
+  .comp-card{
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(0,0,0,0.15);
+  }
+  .comp-card.highlight{
+    border-color: var(--teal);
+    background: linear-gradient(180deg, rgba(45,212,191,0.08), rgba(45,212,191,0.02));
+  }
+  .comp-card .comp-label{
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--gray-400);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .comp-card.highlight .comp-label{color: var(--teal);}
+  .comp-card .comp-value{
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+    line-height: 1;
+  }
+  .comp-card.highlight .comp-value{color: var(--teal);}
+  .comp-card .comp-desc{
+    color: var(--gray-400);
+    font-size: 0.85rem;
+  }
+
+  .what-this-means{
+    background: rgba(45,212,191,0.06);
+    border-left: 3px solid var(--teal);
+    padding: 18px 22px;
+    border-radius: 4px 12px 12px 4px;
+    margin-bottom: 40px;
+  }
+  .what-this-means .label{
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .what-this-means p{
+    color: var(--white);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* EMAIL CAPTURE */
+  .email-capture{
+    padding: 32px 28px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+    border: 1px solid rgba(45,212,191,0.2);
+    border-radius: 14px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .email-capture h3{
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+    color: var(--white);
+    font-weight: 500;
+  }
+  .email-capture p{
+    color: var(--gray-300);
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+  }
+  .email-row{
+    display:flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .email-row input{
+    flex: 1;
+    min-width: 220px;
+    padding: 16px 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(0,0,0,0.3);
+    color: var(--white);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color .2s;
+  }
+  .email-row input::placeholder{color: var(--gray-500);}
+  .email-row input:focus{
+    outline:none;
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px var(--teal-glow);
+  }
+  .email-row button{
+    padding: 16px 26px;
+    background: var(--teal);
+    color: var(--navy);
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all .2s;
+    white-space: nowrap;
+  }
+  .email-row button:hover{background: var(--white);}
+  .email-status{
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: var(--teal);
+    font-weight: 600;
+    min-height: 1.2em;
+  }
+
+  .secondary-cta{
+    text-align: center;
+    padding-top: 8px;
+    color: var(--gray-400);
+    font-size: 0.95rem;
+  }
+  .secondary-cta a{
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: border-color .2s;
+  }
+  .secondary-cta a:hover{border-color: var(--teal);}
+
+  .sources-note{
+    margin-top: 36px;
+    padding: 22px 24px;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    background: rgba(0,0,0,0.15);
+  }
+  .sources-note .sources-label{
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .sources-note p{
+    color: var(--gray-400);
+    font-size: 0.78rem;
+    line-height: 1.6;
+  }
+  .sources-note strong{
+    color: var(--gray-300);
+    font-weight: 600;
+  }
+
+  /* ----------- PROOF SECTION ----------- */
+  .proof{
+    padding: 80px 24px;
+    background: var(--navy-deep);
+    position: relative;
+  }
+  .proof::before{
+    content:'';
+    position:absolute;
+    inset: 0 0 auto 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(45,212,191,0.3), transparent);
+  }
+  .proof-grid{
+    max-width: 1100px;
+    margin: 0 auto;
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  @media(min-width:760px){.proof-grid{grid-template-columns: repeat(3, 1fr);}}
+  .proof-card{
+    padding: 32px 28px;
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .proof-card .pc-num{
+    font-family: 'Fraunces', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 8px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .proof-card .pc-title{
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+  }
+  .proof-card .pc-desc{color: var(--gray-400); font-size: 0.9rem; line-height: 1.5; margin-bottom: 14px;}
+  .proof-card .pc-source{
+    color: var(--gray-500);
+    font-size: 0.7rem;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    font-style: italic;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .proof-card .pc-source{
+    color: var(--gray-500);
+    font-size: 0.7rem;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    letter-spacing: 0.04em;
+  }
+  .proof-card .pc-source em{font-style: normal; color: var(--gray-400);}
+
+  /* QUOTE */
+  .quote-section{
+    padding: 80px 24px;
+    background: var(--navy);
+  }
+  .quote{
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .quote-mark{
+    font-family: 'Fraunces', serif;
+    font-size: 4rem;
+    color: var(--teal);
+    line-height: 0.5;
+    margin-bottom: 16px;
+    opacity: 0.5;
+  }
+  .quote p{
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    color: var(--white);
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 24px;
+    font-style: italic;
+  }
+  .quote-attr{
+    color: var(--gray-300);
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+  }
+  .quote-attr strong{color: var(--white); font-weight: 700;}
+
+  /* ----------- FOOTER ----------- */
+  footer{
+    padding: 60px 24px 40px;
+    background: var(--navy-deep);
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .footer-inner{
+    max-width: 1100px;
+    margin: 0 auto;
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  @media(min-width:640px){.footer-inner{grid-template-columns: 2fr 1fr 1fr;}}
+  .foot-brand .brand-mark{font-size: 1.4rem;}
+  .foot-brand p{color: var(--gray-400); margin-top: 12px; font-size: 0.9rem; max-width: 320px;}
+  .foot-col h4{
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .foot-col p, .foot-col a{
+    color: var(--gray-300);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    text-decoration: none;
+    display: block;
+    transition: color .2s;
+  }
+  .foot-col a:hover{color: var(--teal);}
+  .foot-bottom{
+    max-width: 1100px;
+    margin: 40px auto 0;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    color: var(--gray-500);
+    font-size: 0.8rem;
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* ----------- UTILITIES ----------- */
+  .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="https://www.vola-benefits.com" class="brand" aria-label="VOLA Benefits home">
+      <div class="brand-mark">V O L A<span class="tm">™</span></div>
+      <div class="brand-tag">The Carolinas Agency</div>
+    </a>
+    <span class="nav-phone">Talk to us: <strong>336-221-7101</strong></span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow"><span class="dot"></span> Carolinas small business healthcare audit</div>
+    <h1 class="display hero-title">See what <em>doing nothing</em><br/>is actually costing your business.</h1>
+    <p class="hero-sub">A two-minute audit. Your numbers. No sales pitch. We'll show you what your current benefits gap is quietly costing you every year — and what it would take to redirect that into a plan your team would actually use.</p>
+    <a href="#audit" class="cta-primary">
+      Start My Audit
+      <svg class="arrow" width="18" height="18" viewBox="0 0 18 18" fill="none">
+        <path d="M3.75 9h10.5M9 3.75L14.25 9 9 14.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <div class="hero-meta">
+      <div><span class="check">✓</span> Built for 5–50 employee businesses</div>
+      <div><span class="check">✓</span> Carolinas-focused</div>
+      <div><span class="check">✓</span> Takes under 2 minutes</div>
+    </div>
+  </div>
+</section>
+
+<section class="audit-section" id="audit">
+  <div class="container">
+
+    <div id="audit-flow">
+      <div class="section-label">The Audit</div>
+      <h2 class="display section-title">Four questions. Real numbers.</h2>
+      <p class="section-desc">Every input stays private. No call until you ask for one.</p>
+
+      <div class="audit-card">
+        <div class="progress" id="progress">
+          <div class="active"></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+
+        <!-- STEP 1: Industry -->
+        <div class="step active" data-step="1">
+          <div class="step-counter">Question 1 of 4</div>
+          <h3 class="question display">What industry are you in?</h3>
+          <p class="question-helper">Pick the closest match. We use this to anchor your benchmarks.</p>
+          <div class="options" id="industry-options">
+            <button class="option" data-value="trades"><span class="ico">01</span>Construction &amp; Trades</button>
+            <button class="option" data-value="restaurant"><span class="ico">02</span>Restaurant &amp; Food Service</button>
+            <button class="option" data-value="professional"><span class="ico">03</span>Professional Services</button>
+            <button class="option" data-value="medical"><span class="ico">04</span>Dental / Medical Practice</button>
+            <button class="option" data-value="auto"><span class="ico">05</span>Auto Repair</button>
+            <button class="option" data-value="manufacturing"><span class="ico">06</span>Distribution / Light Mfg</button>
+            <button class="option" data-value="realestate"><span class="ico">07</span>Real Estate</button>
+            <button class="option" data-value="other"><span class="ico">08</span>Other</button>
+          </div>
+          <div class="step-nav">
+            <button class="btn-back" disabled>Back</button>
+            <button class="btn-next" id="next-1" disabled>Continue
+              <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M3.75 9h10.5M9 3.75L14.25 9 9 14.25" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 2: Headcount -->
+        <div class="step" data-step="2">
+          <div class="step-counter">Question 2 of 4</div>
+          <h3 class="question display">How many W-2 employees?</h3>
+          <p class="question-helper">Full-time plus part-time. Estimate is fine.</p>
+          <div class="slider-wrap">
+            <div class="slider-value" id="hc-value">15</div>
+            <div class="slider-value-label">EMPLOYEES</div>
+            <input type="range" id="headcount" min="5" max="50" value="15" step="1">
+            <div class="slider-bounds"><span>5</span><span>50</span></div>
+          </div>
+          <div class="step-nav">
+            <button class="btn-back">Back</button>
+            <button class="btn-next" id="next-2">Continue
+              <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M3.75 9h10.5M9 3.75L14.25 9 9 14.25" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 3: Current setup -->
+        <div class="step" data-step="3">
+          <div class="step-counter">Question 3 of 4</div>
+          <h3 class="question display">What's your current benefits setup?</h3>
+          <p class="question-helper">Be honest. Whatever the answer, this audit assumes it's an OK starting point.</p>
+          <div class="options">
+            <button class="option" data-setup="nothing"><span class="ico">A</span>We don't offer benefits</button>
+            <button class="option" data-setup="highdeductible"><span class="ico">B</span>High-deductible plan</button>
+            <button class="option" data-setup="partial"><span class="ico">C</span>Partial coverage / mixed</button>
+            <button class="option" data-setup="notsure"><span class="ico">D</span>Honestly, I'm not sure</button>
+          </div>
+          <div class="step-nav">
+            <button class="btn-back">Back</button>
+            <button class="btn-next" id="next-3" disabled>Continue
+              <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M3.75 9h10.5M9 3.75L14.25 9 9 14.25" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 4: Turnover -->
+        <div class="step" data-step="4">
+          <div class="step-counter">Question 4 of 4</div>
+          <h3 class="question display">Roughly how many employees do you lose per year?</h3>
+          <p class="question-helper">Include people who quit, get hired away, or you've had to let go.</p>
+          <div class="slider-wrap">
+            <div class="slider-value" id="to-value">2</div>
+            <div class="slider-value-label">EMPLOYEES / YEAR</div>
+            <input type="range" id="turnover" min="0" max="15" value="2" step="1">
+            <div class="slider-bounds"><span>0</span><span>15+</span></div>
+          </div>
+          <div class="step-nav">
+            <button class="btn-back">Back</button>
+            <button class="btn-next" id="next-4">See My Numbers
+              <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M3.75 9h10.5M9 3.75L14.25 9 9 14.25" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="results" id="results">
+      <div class="results-header">
+        <div class="results-label">Your audit · prepared for your business</div>
+        <h2 class="results-headline display">Here's what your current setup is costing you — every year.</h2>
+      </div>
+
+      <div class="big-number">
+        <div class="dollar" id="big-total">$0</div>
+      </div>
+      <div class="big-number-caption">Estimated annual hidden cost of your current benefits gap</div>
+
+      <div class="breakdown">
+        <div class="breakdown-title">How it adds up</div>
+        <div class="breakdown-row">
+          <span class="label">Turnover replacement cost</span>
+          <span class="value" id="b-turnover">$0</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="label">Vacancies you can't fill</span>
+          <span class="value" id="b-vacancy">$0</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="label">Sick days from untreated issues</span>
+          <span class="value" id="b-sick">$0</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="label">Missed Section 125 / FICA savings</span>
+          <span class="value" id="b-fica">$0</span>
+        </div>
+        <div class="breakdown-row" id="b-wc-row">
+          <span class="label">Workers' comp claims that escalated</span>
+          <span class="value" id="b-wc">$0</span>
+        </div>
+        <div class="breakdown-row total">
+          <span class="label">Estimated annual hidden cost</span>
+          <span class="value" id="b-total">$0</span>
+        </div>
+      </div>
+
+      <div class="comparison">
+        <div class="comp-card">
+          <div class="comp-label">Doing Nothing</div>
+          <div class="comp-value" id="comp-nothing">$0</div>
+          <div class="comp-desc">Quietly bleeding off the bottom line every year — and getting worse, not better.</div>
+        </div>
+        <div class="comp-card highlight">
+          <div class="comp-label">A VOLA DPC Plan</div>
+          <div class="comp-value" id="comp-dpc">$0</div>
+          <div class="comp-desc">Typical employer investment for a business your size — DPC + Rx + critical care included.</div>
+        </div>
+      </div>
+
+      <div class="what-this-means">
+        <div class="label">What this means</div>
+        <p id="meaning-text">For most businesses your size, redirecting even part of that hidden cost into real benefits more than pays for itself in retention alone. The math isn't theoretical — it's mechanical.</p>
+      </div>
+
+      <div class="email-capture">
+        <h3>Email me the full report</h3>
+        <p>We'll send a branded PDF with your full numbers, industry benchmarks, and a one-page next-steps summary. No follow-up call unless you ask for one.</p>
+        <form class='email-row' id='email-form' method='POST' name='audit-lead' onsubmit='return submitEmail(event);'>
+          <input type="hidden" name="form-name" value="audit-lead">
+          <p style="display:none;"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
+          <input type="hidden" name="industry" id="hidden-industry">
+          <input type="hidden" name="headcount" id="hidden-headcount">
+          <input type="hidden" name="setup" id="hidden-setup">
+          <input type="hidden" name="turnover" id="hidden-turnover">
+          <input type="hidden" name="hidden-cost" id="hidden-cost">
+          <input type="hidden" name="dpc-investment" id="hidden-dpc">
+          <input type="email" name="email" id="email" placeholder="you@yourbusiness.com" required>
+          <button type="submit">Send My Report</button>
+        </form>
+        <div class="email-status" id="email-status"></div>
+      </div>
+
+      <div class="secondary-cta">
+        <!-- Booking link: Zoho Bookings (Greg's calendar).
+             To change, replace the href on the link below.  -->
+        Ready to talk now? <a href="https://vola.zohobookings.com/#/4052706000000281038" target="_blank" rel="noopener">Book a 20-minute walkthrough →</a>
+      </div>
+
+      <div class="sources-note">
+        <div class="sources-label">About the numbers</div>
+        <p>Replacement cost estimates by industry are drawn from <strong>SHRM</strong> (average cost-per-hire $4,683&ndash;$4,700; total replacement cost typically 50&ndash;200% of annual salary) and <strong>BLS Job Openings &amp; Labor Turnover Survey (JOLTS)</strong> for industry-specific separation rates. Sick-day productivity loss is based on <strong>BLS Employer Costs for Employee Compensation</strong>. The 7.65% Section 125 / FICA savings figure is from <strong>IRS Publication 15</strong>. Benefits offering rates by firm size are from the <strong>KFF 2024 Employer Health Benefits Survey</strong> (53% of small firms with 3&ndash;199 workers offer health benefits; 98% of large firms). DPC cost-reduction figures cite the <strong>Premise Health 2024 advanced primary care study</strong> (n = 200,000+, actuarially validated). These are conservative estimates; your actual numbers are typically higher.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="proof">
+  <div class="proof-grid">
+    <div class="proof-card">
+      <div class="pc-num">~20%</div>
+      <div class="pc-title">Average healthcare cost reduction</div>
+      <div class="pc-desc">When employees use primary care instead of waiting for an ER visit, the math compounds in your favor.</div>
+      <div class="pc-source"><em>Source:</em> Premise Health 2024 study of 200,000+ members (validated by independent actuaries) — 30% lower total healthcare costs, 52% fewer hospital admissions, 17% fewer ER visits among advanced primary care users. DPC Coalition; Hint Health employer case studies.</div>
+    </div>
+    <div class="proof-card">
+      <div class="pc-num">83%</div>
+      <div class="pc-title">Cite benefits as a reason they stay</div>
+      <div class="pc-desc">Workplace benefits are the second strongest retention factor after pay — and the most controllable lever for small business owners.</div>
+      <div class="pc-source"><em>Source:</em> MetLife U.S. Employee Benefit Trends Study; SHRM 2025 Employee Benefits Survey (n = 3,969 HR professionals).</div>
+    </div>
+    <div class="proof-card">
+      <div class="pc-num">3</div>
+      <div class="pc-title">Decisions, not thirty</div>
+      <div class="pc-desc">Contribution, benefits, start date. We handle the rest — communication, enrollment, and ongoing service.</div>
+      <div class="pc-source"><em>VOLA implementation framework.</em></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote-section">
+  <div class="quote">
+    <div class="quote-mark">"</div>
+    <p>We appreciate the opportunity to work with you and look forward to hearing from you soon.</p>
+    <div class="quote-attr"><strong>Gregory Meyer</strong> · Managing Partner, VOLA Benefits</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="foot-brand">
+      <div class="brand-mark">V O L A</div>
+      <p>Your Choice. Your Coverage. Your Life. We deliver flexible benefits that protect your employees' families, finances, and futures — powered by people and technology.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Contact</h4>
+      <a href="tel:13362217101">1-336-221-7101</a>
+      <a href="mailto:info@vola-benefits.com">info@vola-benefits.com</a>
+      <a href="https://www.vola-benefits.com">vola-benefits.com</a>
+    </div>
+    <div class="foot-col">
+      <h4>Office</h4>
+      <p>The Carolinas Agency<br/>701 Green Valley Rd. Ste 100<br/>Greensboro, NC 27408</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© VOLA</div>
+    <div>Privacy · Terms</div>
+  </div>
+</footer>
+
+<script>
+// =============================================================
+// VOLA Audit — calculator logic
+// =============================================================
+
+const REPLACEMENT_COST = {
+  trades: 7500,
+  restaurant: 4500,
+  professional: 12000,
+  medical: 10000,
+  auto: 7500,
+  manufacturing: 6500,
+  realestate: 8000,
+  other: 7500
+};
+
+const VACANCY_COST = {
+  nothing: 10000,
+  highdeductible: 4000,
+  partial: 2000,
+  notsure: 5000
+};
+
+const SICK_DAY_RATE = {
+  nothing: 600,
+  highdeductible: 600,
+  partial: 300,
+  notsure: 500
+};
+
+const WC_RATE = {
+  nothing: 150,
+  highdeductible: 75,
+  partial: 0,
+  notsure: 50
+};
+
+const INDUSTRY_NAME = {
+  trades: 'construction and trades',
+  restaurant: 'restaurant',
+  professional: 'professional services',
+  medical: 'dental or medical practice',
+  auto: 'auto repair',
+  manufacturing: 'distribution or light manufacturing',
+  realestate: 'real estate',
+  other: 'small business'
+};
+
+const state = {
+  step: 1,
+  industry: null,
+  headcount: 15,
+  setup: null,
+  turnover: 2
+};
+
+function fmt(n){
+  return '$' + Math.round(n).toLocaleString('en-US');
+}
+
+function calculate(){
+  const rep = REPLACEMENT_COST[state.industry] || 7500;
+  const turnoverCost = state.turnover * rep;
+  const vacancyCost = VACANCY_COST[state.setup] || 5000;
+  const sickRate = SICK_DAY_RATE[state.setup] || 500;
+  const sickCost = state.headcount * sickRate;
+  const ficaCost = state.headcount * 306;
+  const wcCost = state.headcount * (WC_RATE[state.setup] || 0);
+  const total = turnoverCost + vacancyCost + sickCost + ficaCost + wcCost;
+  // DPC investment: ~$100/EE/mo employer share = $1,200/year
+  const dpc = state.headcount * 1200;
+  return {turnoverCost, vacancyCost, sickCost, ficaCost, wcCost, total, dpc};
+}
+
+function showStep(n){
+  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+  document.querySelector(`[data-step="${n}"]`).classList.add('active');
+  // progress
+  const dots = document.querySelectorAll('#progress div');
+  dots.forEach((d, i) => d.classList.toggle('active', i < n));
+  state.step = n;
+}
+
+// STEP 1 — Industry
+document.querySelectorAll('#industry-options .option').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#industry-options .option').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    state.industry = btn.dataset.value;
+    document.getElementById('next-1').disabled = false;
+  });
+});
+document.getElementById('next-1').addEventListener('click', () => showStep(2));
+
+// STEP 2 — Headcount slider
+const hc = document.getElementById('headcount');
+const hcValue = document.getElementById('hc-value');
+function updateHc(){
+  state.headcount = parseInt(hc.value, 10);
+  hcValue.textContent = state.headcount;
+  const p = ((state.headcount - 5) / (50 - 5)) * 100;
+  hc.style.setProperty('--p', p + '%');
+}
+hc.addEventListener('input', updateHc);
+updateHc();
+document.getElementById('next-2').addEventListener('click', () => showStep(3));
+
+// STEP 3 — Setup
+document.querySelectorAll('[data-setup]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-setup]').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    state.setup = btn.dataset.setup;
+    document.getElementById('next-3').disabled = false;
+  });
+});
+document.getElementById('next-3').addEventListener('click', () => showStep(4));
+
+// STEP 4 — Turnover slider
+const to = document.getElementById('turnover');
+const toValue = document.getElementById('to-value');
+function updateTo(){
+  state.turnover = parseInt(to.value, 10);
+  toValue.textContent = state.turnover >= 15 ? '15+' : state.turnover;
+  const p = (state.turnover / 15) * 100;
+  to.style.setProperty('--p', p + '%');
+}
+to.addEventListener('input', updateTo);
+updateTo();
+document.getElementById('next-4').addEventListener('click', showResults);
+
+// BACK BUTTONS
+document.querySelectorAll('.btn-back').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (state.step > 1) showStep(state.step - 1);
+  });
+});
+
+function showResults(){
+  const r = calculate();
+  document.getElementById('audit-flow').style.display = 'none';
+  document.getElementById('results').classList.add('active');
+
+  // Animate big number
+  animateCount(document.getElementById('big-total'), r.total);
+
+  document.getElementById('b-turnover').textContent = fmt(r.turnoverCost);
+  document.getElementById('b-vacancy').textContent = fmt(r.vacancyCost);
+  document.getElementById('b-sick').textContent = fmt(r.sickCost);
+  document.getElementById('b-fica').textContent = fmt(r.ficaCost);
+  document.getElementById('b-wc').textContent = fmt(r.wcCost);
+  if (r.wcCost === 0) document.getElementById('b-wc-row').style.display = 'none';
+  document.getElementById('b-total').textContent = fmt(r.total);
+
+  document.getElementById('comp-nothing').textContent = fmt(r.total);
+  document.getElementById('comp-dpc').textContent = fmt(r.dpc);
+
+  // Populate hidden form fields so Netlify captures full audit context with the email
+  document.getElementById('hidden-industry').value = state.industry;
+  document.getElementById('hidden-headcount').value = state.headcount;
+  document.getElementById('hidden-setup').value = state.setup;
+  document.getElementById('hidden-turnover').value = state.turnover;
+  document.getElementById('hidden-cost').value = r.total;
+  document.getElementById('hidden-dpc').value = r.dpc;
+
+  // Contextual meaning
+  const industryLabel = INDUSTRY_NAME[state.industry] || 'small business';
+  const diff = r.total - r.dpc;
+  let meaningText;
+  if (diff > 0) {
+    meaningText = `For a ${industryLabel} business with ${state.headcount} employees, you're spending roughly ${fmt(diff)} more on the cost of doing nothing than a comparable DPC plan would cost. The math here isn't theoretical — it's mechanical. Replace even one fewer person next year and the plan has already paid for itself.`;
+  } else {
+    meaningText = `For a ${industryLabel} business with ${state.headcount} employees, your hidden cost is in the same ballpark as a DPC investment. The difference is what you get for the spend: actual benefits your team uses, lower turnover, recruiting leverage, and Section 125 FICA savings on every dollar.`;
+  }
+  document.getElementById('meaning-text').textContent = meaningText;
+
+  // Scroll into view
+  document.getElementById('results').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function animateCount(el, target){
+  const duration = 1200;
+  const start = performance.now();
+  function frame(now){
+    const t = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - t, 3);
+    const v = Math.round(target * eased);
+    el.textContent = fmt(v);
+    if (t < 1) requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+}
+
+function submitEmail(e){
+  e.preventDefault();
+  const form = e.target;
+  const status = document.getElementById('email-status');
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  // Show pending state
+  status.style.color = 'var(--gray-300)';
+  status.textContent = 'Sending…';
+  submitBtn.disabled = true;
+  submitBtn.style.opacity = '0.6';
+
+  // Build URL-encoded body from form data — Netlify's expected format
+  const formData = new FormData(form);
+  const body = new URLSearchParams(formData).toString();
+
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: body
+  })
+  .then((response) => {
+    if (!response.ok) throw new Error('Network response was not ok');
+    status.style.color = 'var(--teal)';
+    status.textContent = '✓ Sent — check your inbox in a minute. We\'ll be in touch only if you reply.';
+    form.reset();
+    // Hook for analytics
+    if (window.dataLayer) window.dataLayer.push({event:'audit_lead_submit', industry: state.industry, headcount: state.headcount});
+  })
+  .catch((err) => {
+    console.error('Submission error:', err);
+    status.style.color = '#F87171';
+    status.textContent = 'Something went wrong sending the report. Please try again, or call us directly at 336-221-7101.';
+    submitBtn.disabled = false;
+    submitBtn.style.opacity = '1';
+  });
+
+  return false;
+}
+</script>
+
+</body>
+</html>

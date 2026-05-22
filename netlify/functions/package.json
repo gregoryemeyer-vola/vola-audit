@@ -1,0 +1,9 @@
+{
+  "name": "vola-audit-functions",
+  "version": "1.0.0",
+  "description": "Netlify Functions for VOLA audit landing page",
+  "private": true,
+  "dependencies": {
+    "pdfkit": "^0.15.0"
+  }
+}
